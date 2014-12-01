@@ -1,0 +1,131 @@
+
+body {
+  display: inline-block;
+  font-family: "Arial", monospace;
+}
+
+
+.timer {
+  overflow: hidden;
+  height: 144px;
+  width: 144px;
+  position: relative;
+  z-index: -10;
+}
+
+#cover {
+  border-radius: 50%;
+  width: 144px;
+  height: 144px; 
+  background-color:red;
+  top: 8px;
+  left: 9px;
+  position: absolute;
+  display: none;
+}
+
+#stop {
+  font-size: 2em;
+  font: Arial;
+  font-weight: bold;
+  position: absolute;
+  top: 40px;
+  left: 35px;
+  color: white;
+  position: absolute;
+  display: none;
+}
+
+#msg {
+  font-size: 0.92em;
+  font: Arial;
+  position: absolute;
+  top: 80px;
+  left: 13px;
+  color: white;
+  position: absolute;
+  display: none;
+  text-align: center;
+}
+
+.timer .timer-half {
+  height: 144px;
+  width: 72px;
+  border-radius: 72px 0 0 72px;
+  background: red;
+  position: absolute;
+  z-index: -1;
+}
+.timer .timer-half:nth-of-type(2) {
+  z-index: 99999999;
+  -webkit-transform-origin: center right;
+  -webkit-transform: rotate(180deg);
+}
+.timer .timer-half:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 9px;
+  left: 9px;
+  height: 126px;
+  width: 63px;
+  border-radius: 67.5px 0 0 67.5px;
+  background: white;
+}
+.timer .timer-half:after {
+  content: "";
+  position: absolute;
+  background: white;
+  z-index: -1;
+  height: 288px;
+  width: 216px;
+  left: -144px;
+  top: -72px;
+  -webkit-transform-origin: center right;
+}
+.timer.animate {
+  -webkit-transform-origin: center right;
+}
+.timer.animate .timer-half:nth-of-type(1):after {
+  -webkit-animation: rotateLeftMask 620s infinite linear;
+}
+.timer.animate .timer-half:nth-of-type(2):after {
+  -webkit-animation: rotateRightMask 620s infinite linear;
+}
+
+#time {
+  font-size: 1.2em;
+  font: Arial;
+  font-weight: bold;
+
+  position: absolute;
+  top: 55px;
+  left: 50px;
+  color: #999999;
+  z-index: 1000;
+}
+
+@-webkit-keyframes rotateLeftMask {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+  }
+}
+@-webkit-keyframes rotateRightMask {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    visibility: hidden;
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+    visibility: hidden;
+  }
+}
