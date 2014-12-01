@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="half.css">
+
+<div class="timer animate">
+  <div class="timer-half"></div>
+  <div class="timer-half"></div>
+
+</div>
+<div id="cover"></div>
+<div id="stop"> STOP! </div>
+<div id="msg">  You have wasted 10 <br>mins  of your life </div>
+
+<div id="time">0 mins</div>
+
+<script type = "text/javascript">
+
+var timeInSecs;
+var ticker;
+var mins=0;
+
+function startTimer(secs){
+timeInSecs = parseInt(secs)-1;
+ticker = setInterval("tick()",1000);   // every second
+}
+
+function tick() {
+
+var secs = timeInSecs;
+if (secs>0) {
+timeInSecs--;
+}
+else {
+
+if (secs%60==0) {
+		++mins;
+		document.getElementById("time").innerHTML = mins+" mins";
+}
+
+if(mins==10) {
+    mins=0;
+    console.log('mins:'+mins);
+
+	document.getElementById("cover").style.display = 'block';
+  document.getElementById("time").style.display = 'none';
+  document.getElementById("stop").style.display = 'block';
+  document.getElementById("msg").style.display = 'block';
+}
+
+clearInterval(ticker); // stop counting at zero
+startTimer(60);  // remove forward slashes in front of startTimer to repeat if required
+}
+
+}
+
+//fb condition here
+startTimer(60);  // 60 seconds 
+
+</script>
+
+
+
+</body>
+</head>
