@@ -12,9 +12,5 @@ The widget is coded in HTML, CSS and Javascript making it reusable and pluggable
 
 The concept of a countdown timer isn’t novel, but applying it to Facebook through the intuitive design of a stop sign can help police unconscious wastage of time with the help of a simple, intuitive reminder.
 
-Instructions to run widget:
-1.	Download the CSS and HTML files into the same directory
-2.	Click on the html file. The widget should appear in your default browser (Chrome has worked well for me).
-
 Note: As per Jeff’s suggestion, I did not go the extra stretch of actually turning this into a Chrome plugin. I also did comment my code extensively since the emphasis of this assignment is the UI.  For help with CSS, I referred to http://css-tricks.com/css-pie-timer/ 
 
